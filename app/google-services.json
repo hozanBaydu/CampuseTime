@@ -1,0 +1,39 @@
+﻿{
+  "project_info": {
+    "project_number": "773394897645",
+    "project_id": "campustime-77bbb",
+    "storage_bucket": "campustime-77bbb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:773394897645:android:cc0c97df063556626f4ae4",
+        "android_client_info": {
+          "package_name": "com.hozanbaydu.campustime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "773394897645-gp3ei3tud6t2t87ffthcnpl3hnnsghbe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkqHXN36iyCjT7bOzHTM4XiqLreZTyeGo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "773394897645-gp3ei3tud6t2t87ffthcnpl3hnnsghbe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
