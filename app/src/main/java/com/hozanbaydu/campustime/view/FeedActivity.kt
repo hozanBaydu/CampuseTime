@@ -71,7 +71,7 @@ class FeedActivity : AppCompatActivity() {
 
 
                         }
-                        feedAdapter.notifyDataSetChanged() //veriler güncellendi ona göre davran.
+                        feedAdapter.notifyDataSetChanged()
 
                     }
                 }
