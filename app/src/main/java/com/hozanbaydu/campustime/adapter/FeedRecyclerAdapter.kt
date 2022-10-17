@@ -20,7 +20,7 @@ class FeedRecyclerAdapter(val postList:ArrayList<Post>):RecyclerView.Adapter<Fee
     override fun onBindViewHolder(holder: PostHolder, position: Int) {
         holder.binding.recyclerEmailText.text=postList.get(position).email
         holder.binding.recyclerCommentText.text=postList.get(position).comment
-        Picasso.get().load(postList.get(position).dowlandUrl).into(holder.binding.recyclerImageView) //Picasso asekron işlemini kendisi otomatik yapıyor.
+        Picasso.get().load(postList.get(position).dowlandUrl).into(holder.binding.recyclerImageView)
 
 
 
