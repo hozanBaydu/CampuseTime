@@ -48,6 +48,23 @@ class UploadActivity : AppCompatActivity() {
         firestore=Firebase.firestore
         storage=Firebase.storage
 
+
+        binding.floatingActionButton2.visibility=View.GONE
+        binding.floatingActionButton3.visibility=View.GONE
+        binding.floatingActionButton4.visibility=View.GONE
+
+
+    }
+
+
+    fun send(view: View){
+        binding.floatingActionButton5.visibility=View.GONE
+
+        Toast.makeText(applicationContext,"Üniversite seçin",Toast.LENGTH_SHORT).show()
+
+        binding.floatingActionButton2.visibility=View.VISIBLE
+        binding.floatingActionButton3.visibility=View.VISIBLE
+        binding.floatingActionButton4.visibility=View.VISIBLE
     }
 
     fun upload (view: View) {
@@ -85,6 +102,8 @@ class UploadActivity : AppCompatActivity() {
         }
 
     }
+
+
 
     fun selectImage(view: View) {
         if (ContextCompat.checkSelfPermission(this,Manifest.permission.READ_EXTERNAL_STORAGE)!=PackageManager.PERMISSION_GRANTED){
