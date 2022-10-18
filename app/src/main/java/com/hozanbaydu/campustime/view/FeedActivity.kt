@@ -64,7 +64,7 @@ class FeedActivity : AppCompatActivity() {
                             //as? yaparsak nullable yapıp if controlden sonra eğer string olabiliyorsa su işlemi yap diyebiliriz.
                             val userEmail=document.get("userEmail") as String
                             val dowloadUrl=document.get("dowlandUrl") as String
-                            println(comment)
+
                             val post=Post(userEmail,comment,dowloadUrl)
                             postArrayList.add(post)
 
