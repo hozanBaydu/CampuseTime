@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/add_post"
         android:title="Gönderi paylaş">
@@ -8,8 +9,17 @@
     </item>
 
 
+    <item android:title="ODTÜ Time"
+        android:id="@+id/odtu"/>
+    <item android:title="YTÜ Time"
+        android:id="@+id/ytu"/>
+    <item android:title="İTÜ Time"
+        android:id="@+id/itu"/>
+
+
     <item android:id="@+id/signout"
         android:title="Çıkış yap">
 
     </item>
+
 </menu>
