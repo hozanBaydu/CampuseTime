@@ -19,3 +19,4 @@ Bu README dosyasında kısaca,yaptığım uygulamanın ilk sürümünün özelli
 > okul çevrelerinde sosyalleşmesi hem de 
 > sınav soruları gibi ders araçlarının paylaşıldığı bir  
 > platform olması amacıyla yazılmıştır.
+![Alt text](C:\Users\lenovo\Desktop\image1.jpeg?raw=true "Title")
