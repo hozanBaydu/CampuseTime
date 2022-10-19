@@ -110,9 +110,7 @@ class FeedActivity : AppCompatActivity() {
             finish()
         }else if (item.itemId==R.id.odtu){
 
-            sharedPreferences.edit().putBoolean("ytu",false).apply()
-            sharedPreferences.edit().putBoolean("itu",false).apply()
-            sharedPreferences.edit().putBoolean("odtu",true).apply()
+
             getData("odtu")
             binding.recyclerView.layoutManager=LinearLayoutManager(this)
             feedAdapter= FeedRecyclerAdapter(postArrayList)
@@ -122,9 +120,7 @@ class FeedActivity : AppCompatActivity() {
 
         }
         else if (item.itemId==R.id.ytu){
-            sharedPreferences.edit().putBoolean("odtu",false).apply()
-            sharedPreferences.edit().putBoolean("itu",false).apply()
-            sharedPreferences.edit().putBoolean("ytu",true).apply()
+
             getData("ytu")
             binding.recyclerView.layoutManager=LinearLayoutManager(this)
             feedAdapter= FeedRecyclerAdapter(postArrayList)
@@ -135,9 +131,7 @@ class FeedActivity : AppCompatActivity() {
         }
         else if (item.itemId==R.id.itu){
 
-            sharedPreferences.edit().putBoolean("odtu",false).apply()
-            sharedPreferences.edit().putBoolean("ytu",false).apply()
-            sharedPreferences.edit().putBoolean("itu",true).apply()
+
             getData("itu")
             binding.recyclerView.layoutManager=LinearLayoutManager(this)
             feedAdapter= FeedRecyclerAdapter(postArrayList)
