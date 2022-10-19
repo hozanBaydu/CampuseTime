@@ -47,6 +47,7 @@ Kullanıcı uygulamaya her giriş yapmak istendiğinde bu sayfanın çıkası ve
 Kullanıcının paylaşımları görebileceği sayfadır.
 ![giriş sayfası](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpkjMYPOQM-QB19pO5ycirDY1c4gn7352l_JUsJgbbrgq5HVT2B9AXNFV9XQHfN7vmeB8arSddA7HKePszZv0nQ6X6CMIz63yMStjWAKP8RxaMsrJMtpbgKQVAxC6CdhgiEsRIoRwMhngTtAzf4fTz7J6HLa17jBbrEoziglgw3DaIQc_TbIO2mZdp/s600/image2.jpeg)
 
+
 Bu sayfada tüm gönderilerin aynı anda okunmaması için recyclerview kullandım.
 Bunun için viewbindingten yararlanarak adapter kodladım.Bu adapterde bir postList:ArrayList<Post>
 isteniyor ve bu değeri firebaseden çekerek recyclerviewde gösteriyor.
