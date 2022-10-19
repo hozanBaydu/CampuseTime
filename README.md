@@ -2,7 +2,7 @@
 ## Hozan BAYDU
 
 Merhaba,ben Hozan.Bu uygulamayı Firebase ve kotlin kullanarak yazdım.
-Bu README dosyasında kısaca,yaptığım uygulamanın özelliklerini anlatıp bu özellikleri nasıl kodladığımı anlatacağım.  
+Bu README dosyasında kısaca,yaptığım uygulamanın ilk sürümünün özelliklerini anlatıp bu özellikleri nasıl kodladığımı anlatacağım.  
 
  1. Uygulama tanıtımı
  2.Kodlar
