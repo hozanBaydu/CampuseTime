@@ -43,15 +43,19 @@ class UploadActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        supportActionBar?.hide()
+
+
         registerLauncher()
         auth= Firebase.auth
         firestore=Firebase.firestore
         storage=Firebase.storage
 
 
-        binding.floatingActionButton2.visibility=View.GONE
-        binding.floatingActionButton3.visibility=View.GONE
-        binding.floatingActionButton4.visibility=View.GONE
+        binding.ytuButton.visibility=View.GONE
+        binding.ituButton.visibility=View.GONE
+        binding.odtuButton.visibility=View.GONE
+
 
 
     }
@@ -62,12 +66,32 @@ class UploadActivity : AppCompatActivity() {
 
         Toast.makeText(applicationContext,"Üniversite seçin",Toast.LENGTH_SHORT).show()
 
-        binding.floatingActionButton2.visibility=View.VISIBLE
-        binding.floatingActionButton3.visibility=View.VISIBLE
-        binding.floatingActionButton4.visibility=View.VISIBLE
+        binding.ytuButton.visibility=View.VISIBLE
+        binding.ituButton.visibility=View.VISIBLE
+        binding.odtuButton.visibility=View.VISIBLE
     }
 
-    fun upload (view: View) {
+
+    fun ytuButton (view: View){
+        binding.ytuButton.visibility=View.GONE
+        Toast.makeText(applicationContext,"YTÜ yükleniyor",Toast.LENGTH_SHORT).show()
+        upload("ytu")
+
+    }
+
+    fun ituButton(view: View){
+        binding.ituButton.visibility=View.GONE
+        Toast.makeText(applicationContext,"İTÜ yükleniyor",Toast.LENGTH_SHORT).show()
+        upload("itu")
+    }
+
+    fun odtuButton(view: View){
+        binding.odtuButton.visibility=View.GONE
+        Toast.makeText(applicationContext,"ODTÜ yükleniyor",Toast.LENGTH_SHORT).show()
+        upload("odtu")
+    }
+
+    fun upload (string: String) {
         val uuid=UUID.randomUUID()
         val imageName="$uuid.jpg"
 
@@ -83,6 +107,9 @@ class UploadActivity : AppCompatActivity() {
                         postMap.put("dowlandUrl",dowlandUrl)
                         postMap.put("userEmail",auth.currentUser!!.email!!)
                         postMap.put("comment",binding.commentText.text.toString())
+
+                        postMap.put("uni",string)
+
                         postMap.put("date",Timestamp.now())
                         firestore.collection("posts").add(postMap).addOnSuccessListener {
                             finish()
