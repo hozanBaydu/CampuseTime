@@ -1,10 +1,19 @@
 # CampuseTime
-<h1 align="center">Merhaba 👋, ben Hozan BAYDU</h1>
-<h3 align="center">Mobil uygulama geliştiricisiyim.</h3>
+## Hozan BAYDU
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-</p>
+Merhaba,ben Hozan.Bu uygulamayı Firebase ve kotlin kullanarak yazdım.
+Bu README dosyasında kısaca,yaptığım uygulamanın özelliklerini anlatıp bu özellikleri nasıl kodladığımı anlatacağım.  
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://kafka.apache.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/apache_kafka/apache_kafka-icon.svg" alt="kafka" width="40" height="40"/> </a> </p>
+ 1. Uygulama tanıtımı
+ 2.Kodlar
+
+## Özellikler
+
+- Her kullanıcı istediği bir okul için paylaşım yapabilecek.
+- Kullanıcılar mail ile kayıt yapabilecek.
+- Kullanıcı isteğine göre birden fazla okul için paylaşım yapılabilecektir.
+
+
+> Bu uygulama kullanıcılar için bir sosyal medya 
+> olmanın ötesinde hem öğrencilerin kendi
+> okul çevrelerinde sosyalleşmesi hem de 
