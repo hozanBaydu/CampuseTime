@@ -17,3 +17,5 @@ Bu README dosyasında kısaca,yaptığım uygulamanın özelliklerini anlatıp b
 > Bu uygulama kullanıcılar için bir sosyal medya 
 > olmanın ötesinde hem öğrencilerin kendi
 > okul çevrelerinde sosyalleşmesi hem de 
+> sınav soruları gibi ders araçlarının paylaşıldığı bir  
+> platform olması amacıyla yazılmıştır.
