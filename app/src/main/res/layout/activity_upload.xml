@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_marginTop="20dp"
         android:onClick="selectImage"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,36 +34,38 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton2"
+        android:id="@+id/ytuButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:clickable="true"
-        android:onClick="upload"
+        android:onClick="ytuButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ytu" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton3"
+        android:id="@+id/ituButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:clickable="true"
-        app:layout_constraintBottom_toTopOf="@+id/floatingActionButton2"
+        android:onClick="ituButton"
+        app:layout_constraintBottom_toTopOf="@+id/ytuButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/itu" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton4"
+        android:id="@+id/odtuButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:clickable="true"
-        app:layout_constraintBottom_toTopOf="@+id/floatingActionButton3"
+        android:onClick="odtuButton"
+        app:layout_constraintBottom_toTopOf="@+id/ituButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/odtu" />
 
