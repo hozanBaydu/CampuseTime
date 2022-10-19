@@ -91,7 +91,7 @@ class UploadActivity : AppCompatActivity() {
         upload("odtu")
     }
 
-    fun upload (string: String) {
+    fun upload (uni: String) {
         val uuid=UUID.randomUUID()
         val imageName="$uuid.jpg"
 
@@ -108,10 +108,10 @@ class UploadActivity : AppCompatActivity() {
                         postMap.put("userEmail",auth.currentUser!!.email!!)
                         postMap.put("comment",binding.commentText.text.toString())
 
-                        postMap.put("uni",string)
+                        postMap.put("uni",uni)
 
                         postMap.put("date",Timestamp.now())
-                        firestore.collection("posts").add(postMap).addOnSuccessListener {
+                        firestore.collection(uni).add(postMap).addOnSuccessListener {
                             finish()
                         }.addOnFailureListener{
                             Toast.makeText(this,it.localizedMessage,Toast.LENGTH_LONG).show()

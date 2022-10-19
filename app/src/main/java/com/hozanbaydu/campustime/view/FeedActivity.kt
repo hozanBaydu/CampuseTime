@@ -1,6 +1,10 @@
 package com.hozanbaydu.campustime.view
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -25,6 +29,7 @@ class FeedActivity : AppCompatActivity() {
     private lateinit var db:FirebaseFirestore
     private lateinit var postArrayList:ArrayList<Post>
     private lateinit var feedAdapter:FeedRecyclerAdapter
+    lateinit var sharedPreferences: SharedPreferences
 
 
 
@@ -35,21 +40,22 @@ class FeedActivity : AppCompatActivity() {
         setContentView(view)
 
 
+        sharedPreferences=this.getSharedPreferences("com.hozanbaydu.campustime", Context.MODE_PRIVATE)
+
 
         auth=Firebase.auth
         db=Firebase.firestore
         postArrayList=ArrayList<Post>()
-        getData()
-        binding.recyclerView.layoutManager=LinearLayoutManager(this)
-        feedAdapter= FeedRecyclerAdapter(postArrayList)
-        binding.recyclerView.adapter=feedAdapter
+
+
+
 
 
     }
-    private fun getData(){
+    private fun getData(uni:String){
 
 
-        db.collection("posts").orderBy("date",Query.Direction.DESCENDING).addSnapshotListener { value, error ->
+        db.collection(uni).orderBy("date",Query.Direction.DESCENDING).addSnapshotListener { value, error ->
            //db.collection("posts").whereEqualTo("userEmail","hozan.baydu@gmail.com").addSnapshotListener sadece hozan.baydu@gmail.com bu e mailin postalarını çeker.
             if (error!=null){
                 Toast.makeText(this,error.localizedMessage,Toast.LENGTH_LONG).show()
@@ -74,11 +80,8 @@ class FeedActivity : AppCompatActivity() {
                             val dowloadUrl=document.get("dowlandUrl") as String
 
 
-
                             val post=Post(userEmail,comment,dowloadUrl)
                             postArrayList.add(post)
-
-
 
                         }
                         feedAdapter.notifyDataSetChanged()
@@ -107,13 +110,43 @@ class FeedActivity : AppCompatActivity() {
             finish()
         }else if (item.itemId==R.id.odtu){
 
-
+            sharedPreferences.edit().putBoolean("ytu",false).apply()
+            sharedPreferences.edit().putBoolean("itu",false).apply()
+            sharedPreferences.edit().putBoolean("odtu",true).apply()
+            getData("odtu")
+            binding.recyclerView.layoutManager=LinearLayoutManager(this)
+            feedAdapter= FeedRecyclerAdapter(postArrayList)
+            binding.recyclerView.adapter=feedAdapter
+            getSupportActionBar()?.setTitle("Orta Doğu Teknik Üniversitesi")
+            getSupportActionBar()?.setBackgroundDrawable( ColorDrawable(Color.parseColor("#1c6071")))
 
         }
         else if (item.itemId==R.id.ytu){
+            sharedPreferences.edit().putBoolean("odtu",false).apply()
+            sharedPreferences.edit().putBoolean("itu",false).apply()
+            sharedPreferences.edit().putBoolean("ytu",true).apply()
+            getData("ytu")
+            binding.recyclerView.layoutManager=LinearLayoutManager(this)
+            feedAdapter= FeedRecyclerAdapter(postArrayList)
+            binding.recyclerView.adapter=feedAdapter
+            getSupportActionBar()?.setTitle("Yıldız Teknik Üniversitesi")
+            getSupportActionBar()?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#06023b")))
 
         }
         else if (item.itemId==R.id.itu){
+
+            sharedPreferences.edit().putBoolean("odtu",false).apply()
+            sharedPreferences.edit().putBoolean("ytu",false).apply()
+            sharedPreferences.edit().putBoolean("itu",true).apply()
+            getData("itu")
+            binding.recyclerView.layoutManager=LinearLayoutManager(this)
+            feedAdapter= FeedRecyclerAdapter(postArrayList)
+            binding.recyclerView.adapter=feedAdapter
+            getSupportActionBar()?.setTitle("İstanbul Teknik Üniversitesi")
+            getSupportActionBar()?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#b8860b")))
+
+
+
 
         }
         return super.onOptionsItemSelected(item)
