@@ -21,6 +21,9 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        supportActionBar?.hide()
+
+
 
 // Initialize Firebase Auth
         auth = Firebase.auth
