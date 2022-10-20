@@ -45,7 +45,6 @@ Kullanıcı uygulamaya her giriş yapmak istendiğinde bu sayfanın çıkası ve
 
 ## Ana sayfa
 Kullanıcının paylaşımları görebileceği sayfadır.
-
 ![giriş sayfası](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpkjMYPOQM-QB19pO5ycirDY1c4gn7352l_JUsJgbbrgq5HVT2B9AXNFV9XQHfN7vmeB8arSddA7HKePszZv0nQ6X6CMIz63yMStjWAKP8RxaMsrJMtpbgKQVAxC6CdhgiEsRIoRwMhngTtAzf4fTz7J6HLa17jBbrEoziglgw3DaIQc_TbIO2mZdp/s600/image2.jpeg)
 
 Bu sayfada tüm gönderilerin aynı anda okunmaması için recyclerview kullandım.
@@ -112,3 +111,59 @@ Action Barın seçilen okula göre renk ve isim değiştirilmesi için yukarıda
 ## Yükleme sayfası
 
 Kullanıcılar bu sayfadan gönderi ekleyebilecektir.
+
+![giriş sayfası](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjHl_66BKbIJ2zAjN_eYAS41dVGMTPLiOmy8dG2XzFYloZK6RcccVGkYQonq4bmxZ_fcqEeMGzEgyYn-LSHF35JltYqlTLgcDATPRXsaGHTcVnLnxL4pzx9X5t_aEsaAJRLKSyFjqTq4OI9aux4juj3dFBMXzeEl4FxXNYEs4Hl2SXVHl1DLVXeWOpS/s600/image6.jpeg)
+
+Kullanıcı gerekli izinleri verip fotoğraf ve yorum girdikten sonra gönderiyi paylaşacağı okulu seçmek için ilgili okulun butonuna tıklayacaktır.
+
+```sh
+
+    fun upload (uni: String) {
+        val uuid=UUID.randomUUID()
+        val imageName="$uuid.jpg"
+        val refererence=storage.reference
+        val imageReference=refererence.child("images").child(imageName)
+        if (selectedPicture!=null){
+            imageReference.putFile(selectedPicture!!).addOnSuccessListener{
+             val uploadPictureReference=storage.reference.child("images").child(imageName)
+                uploadPictureReference.downloadUrl.addOnSuccessListener {
+                    val dowlandUrl=it.toString()
+                    if (auth.currentUser !=null){
+                        val postMap= hashMapOf<String,Any>()
+                        postMap.put("dowlandUrl",dowlandUrl)
+                        postMap.put("userEmail",auth.currentUser!!.email!!)
+                        postMap.put("comment",binding.commentText.text.toString())
+                        postMap.put("uni",uni)
+                        postMap.put("date",Timestamp.now())
+                        firestore.collection(uni).add(postMap).addOnSuccessListener {
+                            finish()
+                        }.addOnFailureListener{
+                        Toast.makeText(this,it.localizedMessage,Toast.LENGTH_LONG).show()
+                        }
+                    }
+                }
+            }.addOnFailureListener{
+                Toast.makeText(this,it.localizedMessage,Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+```
+Seçilen görsel ve yorumun fairbaseye gönderilmesi için yukarıdaki kodu yazdım ama seçilen okulun belirtilmesi burada yapılmadığından fonksiyon string olan bir uni değeri istemektedir.
+
+Örnek olarak Ytü altında bir gönderi paylaşılmak istendiğinde yukarıdaki fonksiyon şöyle çağrılmaktadı.
+```sh
+fun ytuButton (view: View){
+        binding.ytuButton.visibility=View.GONE
+        Toast.makeText(applicationContext,"YTÜ yükleniyor",Toast.LENGTH_SHORT).show()
+        upload("ytu")
+    }
+```
+
+Başta ytu butonu visibledir ve gönderinin tekrar tekrar yüklenmemesi için yükledikten hemen sonra butonu yok etmem gerekti.
+
+
+
+## Fairbase
+
+![giriş sayfası](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhTT1xMyZG7BeO4d-VSZl11H_p6bszo1xx8ugjGt0S9iZkJeEykNKeW8yNn7MmRTGrBuA3-wpJkMaJzQW7N7QBj9pxKFbX8V9cNUVkTaQT30PSM7-38frDGeYlWGzecHsSX6hSIwg6FJObGz7O1-XC0dzpGbRePsONa4GkH5Us0SHYDCBMNYC_HcYZc/s400/fair.PNG)
+
