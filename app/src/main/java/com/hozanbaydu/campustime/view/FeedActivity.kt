@@ -40,9 +40,6 @@ class FeedActivity : AppCompatActivity() {
         setContentView(view)
 
 
-        sharedPreferences=this.getSharedPreferences("com.hozanbaydu.campustime", Context.MODE_PRIVATE)
-
-
         auth=Firebase.auth
         db=Firebase.firestore
         postArrayList=ArrayList<Post>()
@@ -56,7 +53,6 @@ class FeedActivity : AppCompatActivity() {
 
 
         db.collection(uni).orderBy("date",Query.Direction.DESCENDING).addSnapshotListener { value, error ->
-           //db.collection("posts").whereEqualTo("userEmail","hozan.baydu@gmail.com").addSnapshotListener sadece hozan.baydu@gmail.com bu e mailin postalarını çeker.
             if (error!=null){
                 Toast.makeText(this,error.localizedMessage,Toast.LENGTH_LONG).show()
 
@@ -66,26 +62,17 @@ class FeedActivity : AppCompatActivity() {
 
                         val documents=value.documents
 
-
                         postArrayList.clear()
-
 
                         for (document in documents){
 
-
-
-                            val comment=document.get("comment") as String//casting=>Bir şeyin string mi ınt mi boolen mi olduğunu bilmeden string veya başka bir şey şeklinde kaydetme.
-                            //as? yaparsak nullable yapıp if controlden sonra eğer string olabiliyorsa su işlemi yap diyebiliriz.
+                            val comment=document.get("comment") as String
                             val userEmail=document.get("userEmail") as String
                             val dowloadUrl=document.get("dowlandUrl") as String
-
-
                             val post=Post(userEmail,comment,dowloadUrl)
                             postArrayList.add(post)
-
                         }
                         feedAdapter.notifyDataSetChanged()
-
                     }
                 }
             }
