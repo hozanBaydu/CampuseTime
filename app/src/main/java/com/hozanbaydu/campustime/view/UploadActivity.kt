@@ -135,7 +135,7 @@ class UploadActivity : AppCompatActivity() {
     fun selectImage(view: View) {
         if (ContextCompat.checkSelfPermission(this,Manifest.permission.READ_EXTERNAL_STORAGE)!=PackageManager.PERMISSION_GRANTED){
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.READ_EXTERNAL_STORAGE)){
-                Snackbar.make(view,"Permission needed for galery",Snackbar.LENGTH_INDEFINITE).setAction("Give permission"){
+                Snackbar.make(view,"Galeriye gitmek için izin vermeniz gerekiyor",Snackbar.LENGTH_INDEFINITE).setAction("İzin ver"){
                     permissionLauncher.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
 
                }.show()
@@ -175,7 +175,7 @@ class UploadActivity : AppCompatActivity() {
               val intentToGallery=Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
               activityResultLauncher.launch(intentToGallery)
           }else{
-              Toast.makeText(this,"permission needed",Toast.LENGTH_LONG).show()
+              Toast.makeText(this,"İzin gerekiyor",Toast.LENGTH_LONG).show()
           }
       }
 
