@@ -172,6 +172,8 @@ Fotoğrafta görüldüğü üzere firebasede itu,odtu ve ytu diye 3 koleksiyon o
 
 
 Uygulamayı yazan:Hozan BAYDU
-Tarih:20.05.2022
-iletişim:hozan.baydu3447@gmail.com
+
+ Tarih:20.05.2022
+
+ iletişim:hozan.baydu3447@gmail.com
 
