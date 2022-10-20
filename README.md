@@ -14,11 +14,11 @@ Bu README dosyasında kısaca,yaptığım uygulamanın özelliklerini anlatıp b
 - Kullanıcı isteğine göre birden fazla okul için paylaşım yapılabilecektir.
 
 
-> Bu uygulama kullanıcılar için bir sosyal medya 
-> olmanın ötesinde hem öğrencilerin kendi
-> okul çevrelerinde sosyalleşmesi hem de 
-> sınav soruları gibi ders araçlarının paylaşıldığı bir  
-> platform olması amacıyla yazılmıştır.
+> Note:  Bu uygulama kullanıcılar için bir sosyal medya 
+ olmanın ötesinde hem öğrencilerin kendi
+ okul çevrelerinde sosyalleşmesi hem de 
+ sınav soruları gibi ders araçlarının paylaşıldığı bir  
+ platform olması amacıyla yazılmıştır.
 
 
 ## Giriş sayfası
@@ -45,6 +45,7 @@ Kullanıcı uygulamaya her giriş yapmak istendiğinde bu sayfanın çıkası ve
 
 ## Ana sayfa
 Kullanıcının paylaşımları görebileceği sayfadır.
+
 ![giriş sayfası](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpkjMYPOQM-QB19pO5ycirDY1c4gn7352l_JUsJgbbrgq5HVT2B9AXNFV9XQHfN7vmeB8arSddA7HKePszZv0nQ6X6CMIz63yMStjWAKP8RxaMsrJMtpbgKQVAxC6CdhgiEsRIoRwMhngTtAzf4fTz7J6HLa17jBbrEoziglgw3DaIQc_TbIO2mZdp/s600/image2.jpeg)
 
 Bu sayfada tüm gönderilerin aynı anda okunmaması için recyclerview kullandım.
@@ -167,3 +168,4 @@ Başta ytu butonu visibledir ve gönderinin tekrar tekrar yüklenmemesi için y�
 
 ![giriş sayfası](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhTT1xMyZG7BeO4d-VSZl11H_p6bszo1xx8ugjGt0S9iZkJeEykNKeW8yNn7MmRTGrBuA3-wpJkMaJzQW7N7QBj9pxKFbX8V9cNUVkTaQT30PSM7-38frDGeYlWGzecHsSX6hSIwg6FJObGz7O1-XC0dzpGbRePsONa4GkH5Us0SHYDCBMNYC_HcYZc/s1522/fair.PNG)
 
+Fotoğrafta görüldüğü üzere firebasede itu,odtu ve ytu diye 3 koleksiyon oluşturulur ve kullanıcının seçimine göre bu gönderiler recyclerviewde gösterilir.
