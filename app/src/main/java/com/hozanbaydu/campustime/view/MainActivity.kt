@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         if (email.equals("") || password.equals("")){
 
-            Toast.makeText(this,"Enter your email and password!!",Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"mail adresiniz ve şifrenizi giriniz!!",Toast.LENGTH_LONG).show()
 
         }else{
             auth.signInWithEmailAndPassword(email,password).addOnSuccessListener {
@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
 
         if (email.equals("") || password.equals("")){
 
-            Toast.makeText(this,"Enter your email and password!!",Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"mail adresiniz ve şifrenizi giriniz!!",Toast.LENGTH_LONG).show()
 
         }else{
             auth.createUserWithEmailAndPassword(email,password).addOnSuccessListener {
