@@ -177,3 +177,7 @@ Uygulamayı yazan:Hozan BAYDU
 
  iletişim:hozan.baydu3447@gmail.com
 
+Tasarım:[Sketchbook](https://www.sketchbook.com/)
+
+[Canva(https://www.canva.com/)
+
