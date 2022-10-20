@@ -179,5 +179,5 @@ Uygulamayı yazan:Hozan BAYDU
 
 Tasarım:[Sketchbook](https://www.sketchbook.com/)
 
-[Canva(https://www.canva.com/)
+[Canva](https://www.canva.com/)
 
